@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="{{asset('css/plugins')}}/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('css/dist')}}/css/adminlte.min.css">
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
     .alert-danger {
     color: #dc3545;
@@ -107,9 +106,6 @@
                 </div>
             @enderror
         </div>
-
-
-        <div class="g-recaptcha mb-1" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
     
         <button type="submit" class="btn btn-primary btn-block">Register</button>
       </form>

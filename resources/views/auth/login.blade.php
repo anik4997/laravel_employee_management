@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="{{ asset('css/plugins')}}/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('css/dist')}}/css/adminlte.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -51,6 +52,7 @@
             </div>
           </div>
         </div>
+        <div class="g-recaptcha mb-1" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
         <div class="row">
           <div class="col-8">
             <a href="{{ route('admin_guest') }}">visit as guest</a>
