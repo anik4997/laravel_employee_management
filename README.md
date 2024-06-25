@@ -1,66 +1,133 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Employee Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Description
+This is a robust Employee Management System built with Laravel. The application allows administrators to manage employee records, tasks, and leave requests. It features secure authentication for both admins and guests, ensuring that only authorized users can access sensitive information and perform administrative actions.
 
-## About Laravel
+## Features
+### Employee Management
+- Add, show, edit, and delete employee records.
+- Employee details include name, email, position, and department.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Task Management
+- Create, show, edit, and delete tasks.
+- Assign tasks to employees.
+- Mark tasks as complete or incomplete.
+- Separate tables for incomplete and completed tasks.
+- Timestamped records (created at and updated at).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Leave Management
+- Apply for leave (employees).
+- Approve or reject leave requests (admin).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Authentication
+- Secure login for administrators.
+- Guest access with limited functionality.
 
-## Learning Laravel
+## Technologies Used
+- Laravel 11.7.0
+- PHP 8.2.4
+- Bootstrap 4
+- SQLite (for local development)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Setup Instructions
+### Prerequisites
+- PHP >= 7.3
+- Composer
+- Git
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Steps to Set Up the Development Environment
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/laravel_employee_management.git
+   cd laravel_employee_management
+   
+   ```
+   2. **Install Dependencies**
+   ```bash
+   composer install
+   npm install
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+   ```
+   3. **Set Up Environment Variables**
+   - Copy the .env.example file to .env
+   ```bash
+   cp .env.example .env
+   ```
+   -Update the .env file to use SQLite for local development. Update the following lines:
+   ```bash
+   DB_CONNECTION=sqlite
+   DB_DATABASE=/full/path/to/your/database.sqlite
+   ```
+   Create the SQLite database file:
+    ```bash
+   touch /full/path/to/your/database.sqlite
+   ```
+   4. **(Optional) MySQL Configuration**
+   ```bash
+    # DB_CONNECTION=mysql
+    # DB_HOST=127.0.0.1
+    # DB_PORT=3306
+    # DB_DATABASE=employee_management
+    # DB_USERNAME=root
+    # DB_PASSWORD=
+   ```
+    4. **Generate Application Key**
+   ```bash
+    php artisan key:generate
+   ```
+    4. **Run Migrations**
+   ```bash
+   php artisan migrate
+   ```
+    4. **Start the Development Server**
+   ```bash
+    php artisan serve
+   ```
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Usage Instructions**
+-Employee Management
+Add an Employee
+Navigate to http://127.0.0.1:8000/employees/create and fill out the form to add a new employee.
 
-### Premium Partners
+-View Employees
+Navigate to http://127.0.0.1:8000/employees to view all employee records.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+-Edit an Employee
+Click the "Edit" button next to an employee record to update its details.
 
-## Contributing
+-Delete an Employee
+Click the "Delete" button next to an employee record to remove it.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-Task Management
+Create a Task
+Navigate to http://127.0.0.1:8000/tasks/create and fill out the form to create a new task.
 
-## Code of Conduct
+-View Tasks
+Navigate to http://127.0.0.1:8000/tasks to view all tasks. Incomplete tasks will be listed first, followed by completed tasks.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-Edit a Task
+Click the "Edit" button next to a task to update its details.
 
-## Security Vulnerabilities
+-Mark a Task as Complete
+Click the "Complete" button next to an incomplete task to mark it as complete. This will move the task to the completed tasks table, and vice versa.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-Delete a Task
+Click the "Delete" button next to a task to remove it.
 
-## License
+-Leave Management
+Apply for Leave
+Employees can navigate to http://127.0.0.1:8000/leaves/create to apply for leave.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+-Approve/Reject Leave Requests
+Admins can navigate to http://127.0.0.1:8000/leaves to view, approve, or reject leave requests.
+
+**Contributing**
+We welcome contributions! Please fork the repository and submit pull requests for any enhancements or bug fixes.
+
+**License**
+This project is open-source and available.
+
+**Contact**
+For any questions or feedback, please contact oliahammed02@gmail.com.
+   
