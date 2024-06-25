@@ -71,15 +71,15 @@ This is a robust Employee Management System built with Laravel. The application 
     # DB_USERNAME=root
     # DB_PASSWORD=
    ```
-    4. **Generate Application Key**
+    5. **Generate Application Key**
    ```bash
     php artisan key:generate
    ```
-    4. **Run Migrations**
+    6. **Run Migrations**
    ```bash
    php artisan migrate
    ```
-    4. **Start the Development Server**
+    7. **Start the Development Server**
    ```bash
     php artisan serve
    ```
@@ -90,36 +90,36 @@ This is a robust Employee Management System built with Laravel. The application 
 Add an Employee
 Navigate to http://127.0.0.1:8000/employees/create and fill out the form to add a new employee.
 
--View Employees
+- View Employees
 Navigate to http://127.0.0.1:8000/employees to view all employee records.
 
--Edit an Employee
+- Edit an Employee
 Click the "Edit" button next to an employee record to update its details.
 
--Delete an Employee
+- Delete an Employee
 Click the "Delete" button next to an employee record to remove it.
 
--Task Management
+- Task Management
 Create a Task
 Navigate to http://127.0.0.1:8000/tasks/create and fill out the form to create a new task.
 
--View Tasks
+- View Tasks
 Navigate to http://127.0.0.1:8000/tasks to view all tasks. Incomplete tasks will be listed first, followed by completed tasks.
 
--Edit a Task
+- Edit a Task
 Click the "Edit" button next to a task to update its details.
 
--Mark a Task as Complete
+- Mark a Task as Complete
 Click the "Complete" button next to an incomplete task to mark it as complete. This will move the task to the completed tasks table, and vice versa.
 
--Delete a Task
+- Delete a Task
 Click the "Delete" button next to a task to remove it.
 
--Leave Management
+- Leave Management
 Apply for Leave
 Employees can navigate to http://127.0.0.1:8000/leaves/create to apply for leave.
 
--Approve/Reject Leave Requests
+- Approve/Reject Leave Requests
 Admins can navigate to http://127.0.0.1:8000/leaves to view, approve, or reject leave requests.
 
 **Contributing**
